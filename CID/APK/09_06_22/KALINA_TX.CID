@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<SCL xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:sxy="http://www.iec.ch/61850/2003/SCLcoordinates" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2003/SCL SCL.xsd http://www.iec.ch/61850/2003/SCLcoordinates  SCL_Coordinates.xsd" version="2007" revision="B">
+<SCL xmlns:ekepm="http://www.kepm.com/2018/61850" xmlns:sxy="http://www.iec.ch/61850/2003/SCLcoordinates" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2003/SCL SCL.xsd http://www.iec.ch/61850/2003/SCLcoordinates  SCL_Coordinates.xsd" version="2007" revision="B">
   <Header id="CID File" version="0" revision="1.0" />
   <Communication>
     <SubNetwork name="W01" type="8-MMS">
@@ -18,11 +18,11 @@
   <IED name="ORION_PRD" desc="APK" type="TX" manufacturer="KEPM">
     <Private type="KEPM_GooseSubscription" />
     <Private type="KEPM_IedResources">
-      <InData format="{0}{1:D3}" name="SPS" min="1" max="32" category="Binary" type="COMPOSITE">
-        <InSubData name="stVal" type="BOOLEAN" />
-        <InSubData name="q" type="Quality" />
-        <InSubData name="t" type="Timestamp" />
-      </InData>
+      <ekepm:InData format="{0}{1:D3}" name="SPS" min="1" max="64" category="Binary" type="COMPOSITE">
+        <ekepm:InSubData name="stVal" type="BOOLEAN" />
+        <ekepm:InSubData name="q" type="Quality" />
+        <ekepm:InSubData name="t" type="Timestamp" />
+      </ekepm:InData>
     </Private>
       <Services nameLength="64">
          <ClientServices goose="true"/>
